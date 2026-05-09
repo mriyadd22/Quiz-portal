@@ -1,0 +1,29 @@
+{% extends 'master/base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+    <div class="container mt-5 ">
+        {% include 'message.html' %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+
+                <div class="card bg-primary" style="width: 25rem;">
+                    <div class="card-header text-center fw-bold">
+                        User Profile
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item fw-semibold">Name: {{request.user.user_profile.name}}</li>
+                        <li class="list-group-item fw-semibold">Gender: {{request.user.user_profile.gender}}</li>
+                        <li class="list-group-item fw-semibold">Age: {{request.user.user_profile.age}}</li>
+                        <li class="list-group-item fw-semibold">Class: {{request.user.user_profile.prt_class}}</li>
+                        <li class="list-group-item fw-semibold">Institute: {{request.user.user_profile.institute}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %} User Login {% endblock %}
+    
+
+{% block content %}
+
+    <div class="container mt-5">
+        {% include 'message.html' %}
+        <form method="post">
+            {% csrf_token %}
+
+            {{data.as_p}}
+            
+            <button class="btn btn-primary">Login</button>
+        </form>
+        <a href="{% url 'register_page' %}">Register</a>
+
+    </div>
+
+{% endblock %}

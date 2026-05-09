@@ -1,0 +1,20 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %} {{title}} {% endblock %}
+    
+
+{% block content %}
+
+    <div class="container mt-5">
+        <form method="post" class="p-5 bg-white shadow rounded-4">
+            {% csrf_token %}
+
+            {{data.as_p}}
+            
+            <button class="btn btn-primary w-100 rounded-pill fw-semibold"> {{btn}} </button>
+        </form>
+
+    </div>
+
+{% endblock %}

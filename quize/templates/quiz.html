@@ -1,0 +1,21 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <p>all quiz</p>
+        <h3>{{quiz.title}}</h3>
+        <div sh>
+            <form method="post">
+                {% csrf_token %}
+
+                {% for q in questions %}
+                    <p>{{q.question}}</p>
+                    {% for opt in q.options %}
+                        <input type="radio" name="{{q.id}}" value="{{opt.id}}"> {{opt.option}}<br>
+                    {% endfor %}
+                {% endfor %}
+                <button class="btn btn-primary mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
